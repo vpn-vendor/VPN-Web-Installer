@@ -20,10 +20,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["config_file"])) {
 
     if (move_uploaded_file($_FILES["config_file"]["tmp_name"], $config_file_ovpn)) {
         if (rename($config_file_ovpn, $config_file_conf)) {
-            shell_exec('sudo systemctl stop openvpn');
+            shell_exec('sudo systemctl stop openvpn@tun0');
             sleep(1);
             $service_name = pathinfo($config_file_conf, PATHINFO_FILENAME);
-            shell_exec('sudo systemctl start openvpn@' . $service_name);
+            shell_exec('sudo systemctl disable openvpn@tun0');
+            shell_exec('sudo systemctl enable openvpn@tun0');
+            shell_exec('sudo systemctl start openvpn@tun0');
             sleep(4);
             echo "<script>Notice('OpenVPN конфигурация успешно установлена и готова к работе!');</script>";
         } else {
