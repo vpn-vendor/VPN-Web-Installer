@@ -9,8 +9,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["config_file"])) {
         exit();
     }
 
-    shell_exec('sudo systemctl stop openvpn');
+    shell_exec('sudo systemctl stop openvpn@tun0');
+    shell_exec('sudo systemctl disable openvpn@tun0');
     shell_exec('sudo systemctl stop wg-quick@tun0');
+    shell_exec('sudo systemctl disable wg-quick@tun0');
     shell_exec('sudo rm /etc/wireguard/*.conf');
     shell_exec('sudo rm /etc/openvpn/*.conf');
 
