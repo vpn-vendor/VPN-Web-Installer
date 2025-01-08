@@ -12,3 +12,8 @@ sudo apt-get install -y htop net-tools mtr dnsmasq network-manager wireguard ope
 sudo git clone https://github.com/Rostarc/VPN-Web-Installer.git /var/www/html
 ```
 Чтобы войти на него перейдите по своему локальному адресу  http://192.168.X.X/ из компьютера в локальной сети
+
+# Контакты и сотрудничество
+Всегда готов обсудить условия для работы с вами и вашими решениями. 
+Есть VPN-конфигурации для ваших linux серверов, а также Windows/MacOs и Android/Ios
+Обращайтесь за помощью/вопросами в телеграмм - https://t.me/vpn_vendor 
