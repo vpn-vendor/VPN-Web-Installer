@@ -13,7 +13,7 @@ sudo rm /var/www/html/*
 ```
 А затем эту команду чтобы скачать файлы сайта:
 ```bash
-sudo git clone https://github.com/Rostarc/VPN-Web-Installer.git /var/www/html
+sudo git clone https://github.com/vpn-vendor/VPN-Web-Installer.git /var/www/html
 ```
 Чтобы войти на него перейдите по своему локальному адресу  http://192.168.X.X/ из компьютера в локальной сети
 
